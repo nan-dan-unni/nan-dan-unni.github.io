@@ -1,11 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Noto Sans", sans-serif;
+}
 body {
-	margin: 0;
-	font-family: "DM Sans", sans-serif;
-	background-color: #02071f;
+  background: #121212;
+  overflow-x: hidden;
+}
+
+.glass-effect {
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  opacity: 1;
+  z-index: 1000;
 }

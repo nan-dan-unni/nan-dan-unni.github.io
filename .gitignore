@@ -11,14 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
-yarn.lock
-package-lock.json
-.vite
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-!.vscode/settings.json
 .idea
 .DS_Store
 *.suo

@@ -1,14 +1,20 @@
 import React from "react";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
+import Skills from "./sections/Skills";
 
 const App = () => {
-	return (
-		<div className="w-full h-[20vh] flex items-center">
-			<div className="w-full text-center">
-				<h1 className="text-primary text-3xl font-semibold">Nandanunni</h1>
-				<p className="text-secondary">Work in progress</p>
-			</div>
-		</div>
-	);
+  return (
+    <div className="bg-dark-100 text-light-100">
+      <Header />
+      <div className="mt-16 flex min-h-[calc(92vh)]">
+        <Hero />
+      </div>
+      <div className="max-w-7xl mx-auto py-8">
+        <Skills />
+      </div>
+    </div>
+  );
 };
 
 export default App;
