@@ -1,24 +1,60 @@
 [
   {
     "title": "Onion UI",
-    "description": "A ReactJS library of UI components for building web applications.",
-    "content": "Onion UI is a collection of UI components that are built with Tailwind CSS. It includes extremely customizable components including buttons, cards, modals, and more.",
+    "description": "A modern, highly customizable React component library.",
+    "content": "Onion UI is a sleek and scalable ReactJS component library built with Tailwind CSS and Framer Motion. It is designed for rapid development, offering a wide range of production-ready UI components like buttons, cards, modals, and more. With a focus on flexibility and developer experience, Onion UI enables seamless integration and styling customization for modern web applications.",
     "links": [
       {
-        "name": "Website",
-        "url": "https://onionui.com"
+        "name": "NPM",
+        "url": "https://www.npmjs.com/package/onion-ui"
       },
       {
         "name": "GitHub",
-        "url": "https://github.com/onionui/onionui"
+        "url": "https://github.com/nan-dan-unni/onion-client-ui"
       }
     ],
     "technologies": ["ReactJS", "TailwindCSS", "TypeScript", "Framer Motion"]
   },
   {
     "title": "Onion Server",
-    "description": "A middleware rich backend framework for building web applications.",
-    "content": "Onion Server is a middleware rich backend framework for building web applications. It include",
-    "links": [{}]
+    "description": "A lightweight yet powerful backend framework for Go developers.",
+    "content": "Onion Server is a middleware-rich backend framework built using Gin-Gonic. It provides robust routing, extensible middleware support, and seamless ORM integration through GORM. Designed for performance and scalability, it simplifies building structured and maintainable APIs while offering complete control over the server stack. It also includes PostgreSQL support for persistent storage.",
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/nan-dan-unni/onion-server-core"
+      }
+    ],
+    "technologies": ["Go", "Gin-Gonic", "Gorm", "PostgreSQL"]
+  },
+  {
+    "title": "Yexit",
+    "description": "A cross-platform personal finance tracker with real-time insights.",
+    "content": "Yexit is a full-featured finance management system built to help users track their income, expenses, and savings with ease. The application combines a smooth mobile experience using React Native with a fast, reliable backend powered by Go and Gin-Gonic. Data persistence is handled via PostgreSQL, and the system supports real-time syncing and insightful reporting for smarter money management.",
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://yexit.vercel.app/"
+      },
+      {
+        "name": "Play Store",
+        "url": "https://play.google.com/store/apps/details?id=com.yexit.app"
+      },
+      {
+        "name": "App Store",
+        "url": "https://apps.apple.com/app/id6472320062"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/nan-dan-unni/yexit"
+      }
+    ],
+    "technologies": [
+      "React Native",
+      "Gin-Gonic",
+      "TypeScript",
+      "Go",
+      "PostgreSQL"
+    ]
   }
 ]
