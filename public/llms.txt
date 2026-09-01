@@ -1,0 +1,41 @@
+# A S Nandanunni
+
+Software Engineer based in Bangalore, India. 3+ years of professional
+experience at FenixPyre (zero-trust file security: encryption, secure
+collaboration, sensitive-data discovery), currently as Frontend Lead
+& Backend Engineer.
+
+## Professional Experience
+- FenixPyre (Mar 2023-present): Frontend Lead & Backend Engineer. Built
+  a SIEM event collection platform across 9+ services, an automated
+  Egnyte token lifecycle management system, and the cloud dashboard and
+  post-processor for an on-device (Rust/ONNX) sensitive-file classifier.
+- Cura (Dec 2025-Apr 2026, freelance): built an AI front-desk platform's
+  unified messaging inbox, RAG-grounded AI agent, and a React Flow-based
+  AI workflow builder.
+- Revyu (2020-2023): first engineer, then co-founder, of a Shopify
+  review-management app.
+
+## Independent Projects
+- Yigloo (https://yigloo.app): solo-built platform, 8 services across
+  TypeScript, Python, and Go, shared identity/SSO and multi-tenant
+  Postgres database.
+- Void Design: open-source React component library (npm).
+- Void Proton: open-source Python backend framework (PyPI).
+
+## Education
+- M.Tech, Artificial Intelligence & Data Science, IIIT Kottayam
+  (2024-2027, in progress)
+- B.Tech, Computer Science Engineering, CUSAT (2019-2023)
+
+## Site
+- Home: https://nandanunni.pages.dev/
+- Experience: https://nandanunni.pages.dev/experience
+- Projects: https://nandanunni.pages.dev/projects
+- About: https://nandanunni.pages.dev/about
+- Resume (PDF): https://nandanunni.pages.dev/resume.pdf
+
+## Links
+- GitHub: https://github.com/nan-dan-unni
+- LinkedIn: https://www.linkedin.com/in/nan-dan-unni/
+- Email: asnqln@gmail.com

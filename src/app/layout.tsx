@@ -1,68 +1,69 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-
-import SITE from "@/core/constants/site.const";
-import SiteFooter from "@/views/layouts/site-footer";
-import SiteHeader from "@/views/layouts/site-header";
-import ThemeProvider from "@/views/providers/theme-provider";
-
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import { ThemeProvider } from "@/components/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/sonner";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { CommandPalette } from "@/components/command-palette";
+import { site } from "@/data/site";
+import { JsonLd } from "@/components/json-ld";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.URL),
+  metadataBase: new URL(site.url),
   title: {
-    default: SITE.TITLE,
-    template: `%s · ${SITE.NAME}`,
+    default: site.titleDefault,
+    template: `%s — ${site.name}`,
   },
-  description: SITE.DESCRIPTION,
+  description: site.shortBio,
+  keywords: [...site.keywords],
+  authors: [{ name: site.name, url: site.url }],
+  creator: site.name,
   openGraph: {
-    title: SITE.TITLE,
-    description: SITE.DESCRIPTION,
-    url: SITE.URL,
-    siteName: SITE.FULL_NAME,
     type: "website",
+    url: site.url,
+    siteName: site.name,
+    title: site.titleDefault,
+    description: site.shortBio,
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE.TITLE,
-    description: SITE.DESCRIPTION,
+    title: site.titleDefault,
+    description: site.shortBio,
+  },
+  alternates: {
+    canonical: site.url,
   },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col">
-        <ThemeProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
+      <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <TooltipProvider delay={150}>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
+            >
+              Skip to content
+            </a>
+            <SiteHeader />
+            <main id="main-content" className="flex-1">
+              {children}
+            </main>
+            <SiteFooter />
+            <CommandPalette />
+            <Toaster position="bottom-right" />
+          </TooltipProvider>
         </ThemeProvider>
+        <JsonLd />
       </body>
     </html>
   );

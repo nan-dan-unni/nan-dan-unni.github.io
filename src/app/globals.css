@@ -1,11 +1,32 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-sans);
+  --color-accent-iris: var(--accent-iris);
+  --color-accent-azure: var(--accent-azure);
+  --color-accent-violet: var(--accent-violet);
+  --color-accent-plum: var(--accent-plum);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -18,32 +39,17 @@
   --color-secondary: var(--secondary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
-  --color-primary-950: var(--primary-950);
-  --color-primary-900: var(--primary-900);
-  --color-primary-800: var(--primary-800);
-  --color-primary-700: var(--primary-700);
-  --color-primary-600: var(--primary-600);
-  --color-primary-400: var(--primary-400);
-  --color-primary-300: var(--primary-300);
-  --color-primary-200: var(--primary-200);
-  --color-primary-100: var(--primary-100);
-  --color-primary-50: var(--primary-50);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
-  /* Yigloo's product identity colors, kept as raw tokens so the Work
-     section can reference each product's real brand color when showcasing
-     the ecosystem, independent of this site's own neutral palette. */
-  --color-brand-yendulum: var(--brand-yendulum);
-  --color-brand-yexit: var(--brand-yexit);
-  --color-brand-yournals: var(--brand-yournals);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
 :root {
@@ -51,21 +57,16 @@
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
-  --primary: #0075a2;
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  /* Electric accent ramp — iris = primary interactive/brand, azure = frontend-tag accent,
+     violet = ai-tag/rare-highlight accent, plum = backend-tag + secondary/border accent. */
+  --accent-iris: oklch(0.535 0.222 279.3);
+  --accent-azure: oklch(0.631 0.146 250.9);
+  --accent-violet: oklch(0.621 0.22 298.6);
+  --accent-plum: oklch(0.458 0.161 291);
+  --primary: var(--accent-iris);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-50: oklch(0.98 0.011 234.19);
-  --primary-100: oklch(0.95 0.028 234.19);
-  --primary-200: oklch(0.885 0.06 234.19);
-  --primary-300: oklch(0.8 0.095 234.19);
-  --primary-400: oklch(0.72 0.14 234.19);
-  --primary-600: oklch(0.56 0.118 234.19);
-  --primary-700: oklch(0.46 0.097 234.19);
-  --primary-800: oklch(0.36 0.076 234.19);
-  --primary-900: oklch(0.26 0.055 234.19);
-  --primary-950: oklch(0.16 0.035 234.19);
-  --brand-yendulum: #2563eb;
-  --brand-yexit: #007a55;
-  --brand-yournals: #7c3aed;
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
@@ -75,8 +76,21 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --radius: 0.75rem;
+  --ring: var(--accent-iris);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
@@ -84,21 +98,15 @@
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
-  --primary: #0075a2;
-  --primary-foreground: oklch(0.985 0 0);
-  --primary-50: oklch(0.98 0.011 234.19);
-  --primary-100: oklch(0.95 0.028 234.19);
-  --primary-200: oklch(0.885 0.06 234.19);
-  --primary-300: oklch(0.8 0.095 234.19);
-  --primary-400: oklch(0.72 0.14 234.19);
-  --primary-600: oklch(0.56 0.118 234.19);
-  --primary-700: oklch(0.46 0.097 234.19);
-  --primary-800: oklch(0.36 0.076 234.19);
-  --primary-900: oklch(0.26 0.055 234.19);
-  --primary-950: oklch(0.16 0.035 234.19);
-  --brand-yendulum: #2563eb;
-  --brand-yexit: #007a55;
-  --brand-yournals: #7c3aed;
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  /* Lighter accent variants for contrast against a dark base. */
+  --accent-iris: oklch(0.705 0.17 279.3);
+  --accent-azure: oklch(0.76 0.11 250.9);
+  --accent-violet: oklch(0.78 0.17 298.6);
+  --accent-plum: oklch(0.66 0.13 291);
+  --primary: var(--accent-iris);
+  --primary-foreground: oklch(0.145 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
@@ -108,17 +116,76 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: var(--accent-iris);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 transition-colors duration-200;
+    @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
   html {
-    @apply scroll-smooth font-sans;
+    @apply font-sans scroll-smooth;
+  }
+  ::selection {
+    background: var(--accent-iris);
+    color: var(--primary-foreground);
+  }
+}
+
+@layer utilities {
+  /* Faint dot grid, used sparingly behind hero/section headers for the "engineering notebook" texture. */
+  .bg-grid-dots {
+    background-image: radial-gradient(
+      color-mix(in oklch, var(--foreground) 14%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  /* One restrained gradient moment: the hero headline / a single key stat, per the design direction. Never used as a full-bleed background. */
+  .text-gradient-accent {
+    background-image: linear-gradient(
+      90deg,
+      var(--accent-azure),
+      var(--accent-iris) 55%,
+      var(--accent-violet)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
