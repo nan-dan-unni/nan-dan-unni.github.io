@@ -29,11 +29,11 @@ collaboration, sensitive-data discovery), currently as Frontend Lead
 - B.Tech, Computer Science Engineering, CUSAT (2019-2023)
 
 ## Site
-- Home: https://nandanunni.pages.dev/
-- Experience: https://nandanunni.pages.dev/experience
-- Projects: https://nandanunni.pages.dev/projects
-- About: https://nandanunni.pages.dev/about
-- Resume (PDF): https://nandanunni.pages.dev/resume.pdf
+- Home: https://nandanunni.yigloo.app/
+- Experience: https://nandanunni.yigloo.app/experience
+- Projects: https://nandanunni.yigloo.app/projects
+- About: https://nandanunni.yigloo.app/about
+- Resume (PDF): https://nandanunni.yigloo.app/resume.pdf
 
 ## Links
 - GitHub: https://github.com/nan-dan-unni

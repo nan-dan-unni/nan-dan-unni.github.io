@@ -1,6 +1,6 @@
 export const site = {
   name: "A S Nandanunni",
-  url: "https://nandanunni.pages.dev",
+  url: "https://nandanunni.yigloo.app",
   titleDefault: "A S Nandanunni — Software Engineer",
   identityStatement:
     "Software Engineer building AI-powered, security-conscious products professionally — and solo-architecting a multi-language platform on the side.",

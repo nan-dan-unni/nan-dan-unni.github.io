@@ -14,7 +14,7 @@ export function buildVCard() {
     "TITLE:Software Engineer",
     "TEL;TYPE=CELL:" + PHONE_NUMBER,
     "EMAIL;TYPE=INTERNET:asnqln@gmail.com",
-    "URL:https://nandanunni.pages.dev",
+    "URL:https://nandanunni.yigloo.app",
     "URL:https://github.com/nan-dan-unni",
     "URL:https://www.linkedin.com/in/nan-dan-unni/",
     "ADR;TYPE=WORK:;;Bangalore;Karnataka;;India",
